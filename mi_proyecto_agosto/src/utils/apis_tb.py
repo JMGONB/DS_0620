@@ -1,9 +1,10 @@
 # Funciones de la API
-
+from flask import Flask
+import request
 # ---------
 #  FLASK
 # --------
-app = Flask(__name__)  
+app=Flask(__name__)  
 @app.route("/")  
 def default():
     return "soy la ruta por defecto. Añadir get_token?id=conseguir token,get_json?id=conseguir json"

@@ -1,28 +1,25 @@
 # Función genérica para abrir, crear, leer  y escribir archivos
 import pandas as pd 
+import urllib
 # Función para abrir el dataset. Esto pasa el archivo CSV (separado por comas) y transformo en un DataFrame
-
- def read_open(csv):    
-    csv_df=pd.read_csv(name,index_col="date")
- x=read(csv=name)
- print(x)
-
-    
+def read_open(name):    
+    csv_df=pd.read_csv(name,sep=";")
+    return csv_df
+  
 # Función para leer url
-    def read_url():
-        url_def=urllib.request.urlopen(url)
-x=read_url(url)
-print(x)
+
+def read_url(url):
+    url_def=urllib.request.urlopen(url)
+    return url_def
+
+# Función para leer url_2
+def url_read(url_2):
+    url_2_def=urllib.request.urlopen(url_2)
+    return url_2_def
 
 # Función para leer url_3
-    def read_url():
-        url_def=urllib.request.urlopen(url)
-x=read_url(url_3)
-print(x)
+def open_url(url_3):
+    url_3_def=urllib.request.urlopen(url_3)
+    return url_3_def
 
 
-
-# Función para abrir el dataset. Convertimos el csv en dataframe csv_df y establecemos que "date" es tipo fecha:
-def open_csv(url):
-    csv_df=pd.read_csv(url, parse_dates=["date"], index_col="date")
-    return csv_df

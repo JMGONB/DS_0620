@@ -1,6 +1,6 @@
 #Archivo que contiene importaciones y llamadas a módulos
 
-import os, sys
+import os,sys
 sys.path.append("../src/utils")
 import numpy as np
 import pandas as pd
@@ -9,7 +9,7 @@ import json
 from matplotlib import pyplot as plt
 import seaborn as sns
 from api import server
-from utils import apis_mp, folders_mp, mining_data_mp, visualization_mp
+from utils import apis_tb, folders_tb, mining_data_tb, visualization_tb
 import re
 import requests
 from bs4 import BeautifulSoup

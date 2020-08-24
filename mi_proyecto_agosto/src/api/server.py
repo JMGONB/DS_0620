@@ -1,8 +1,7 @@
-# Group B api server @jalex-yestera
+
 
 # ----------------------
 # $$$$$$$ SERVER $$$$$$$$
-# ----------------------
 
 def main():
 
@@ -29,3 +28,4 @@ def main():
             
 if __name__ == "__main__":
     main()
+
