@@ -1,24 +1,15 @@
 # Funciones de la API
 from flask import Flask
 import request
+import os,sys
+import json
 # ---------
 #  FLASK
 # --------
 app=Flask(__name__)  
 @app.route("/")  
 def default():
-    return "soy la ruta por defecto. Añadir get_token?id=conseguir token,get_json?id=conseguir json"
-
-@app.route("/get_token", methods = ['GET'])
-def get_token():
-    clave = None
-    key = {"token": "L51391909"}
-    if 'id' in request.args: 
-        clave = str(request.args['id'])
-    if clave == 'L345':
-        return key['token']
-    else:
-        return "Error al introducir la clave. Prueba nuevamente"
+    return "soy la ruta por defecto. Añadir get_token?id=conseguir json"
 
 @app.route("/get_json", methods = ['GET'])
 def get_json():
@@ -32,3 +23,5 @@ def get_json():
         token = str(request.args['id'])
     if token == 'L51391909':
         return field
+    else:
+        return "Error al introducir la clave. Prueba nuevamente"
