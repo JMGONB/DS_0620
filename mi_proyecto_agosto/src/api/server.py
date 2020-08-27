@@ -1,11 +1,15 @@
 
+import os,sys
+import json
+import pandas as pd
+from flask import Flask,render_template,redirect,request,jsonify
+
+
 
 # ----------------------
 # $$$$$$$ SERVER $$$$$$$$
-import os,sys
-import json
-from flask import Flask,render_template,redirect,request,jsonify
-app=Flask(__name__)
+
+app = Flask(__name__)  #Inicializa el servidor
 
 def main():
 
@@ -13,7 +17,7 @@ def main():
     print(os.path.dirname(__file__))
     
     # RUTA HASTA EL FICHERO JSON
-    settings_file = os.path.dirname(__file__) + "\\..\\..\\resources\\json\\input\\settings.json"
+    settings_file = os.path.dirname(__file__) + "\\..\\..\\src\\api\\settings.json"
     # ABRIR FICHERO EN MODO LECTURA Y CARGAR EN VARIABLE JSON READED
     with open(settings_file, "r") as json_file_readed:
         json_readed = json.load(json_file_readed)
@@ -27,9 +31,11 @@ def main():
         PORT_NUM = json_readed["port"]
         app.run(debug=DEBUG, host=HOST, port=PORT_NUM)
     else:
-        print("Server settings.json doesn't allow to start server. " + 
+        print("Server settings.json doesn't allow to start server." + 
               "Please, allow it to run it.")
             
 if __name__ == "__main__":
     main()
+
+
 

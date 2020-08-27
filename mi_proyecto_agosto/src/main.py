@@ -1,5 +1,4 @@
-#Archivo que contiene importaciones y llamadas a módulos
-
+#Archivo que contiene importaciones y llamadas a módulos.
 import os,sys
 sys.path.append("../src/utils")
 import numpy as np
@@ -14,7 +13,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import urllib
-
+from visualization_tb import vacunaciones_cam
 
 
 
