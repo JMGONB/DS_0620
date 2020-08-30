@@ -1,6 +1,8 @@
 # Función genérica para abrir, crear, leer  y escribir archivos
 import pandas as pd 
 import urllib
+from bs4 import BeautifulSoup
+
 # Función para abrir el dataset. Esto pasa el archivo CSV (separado por comas) y transformo en un DataFrame
 def read_open(name):    
     csv_df=pd.read_csv(name,sep=";")
@@ -9,17 +11,24 @@ def read_open(name):
 # Función para leer url
 
 def read_url(url):
-    url_def=urllib.request.urlopen(url)
-    return url_def
+    html=urllib.request.urlopen(url)
+    soup=BeautifulSoup( html,"html.parser")
+    return soup
 
 # Función para leer url_2
+
 def url_read(url_2):
-    url_2_def=urllib.request.urlopen(url_2)
-    return url_2_def
+    html_2=urllib.request.urlopen(url_2)
+    soup_6=BeautifulSoup(html_2,"html.parser")
+    return soup_6
 
 # Función para leer url_3
+
 def open_url(url_3):
-    url_3_def=urllib.request.urlopen(url_3)
-    return url_3_def
+    html_3=urllib.request.urlopen(url_3)
+    soup_8=BeautifulSoup(html_3,"html.parser")
+    return soup_8
+
+
 
 

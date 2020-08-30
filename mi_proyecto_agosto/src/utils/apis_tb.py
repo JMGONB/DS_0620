@@ -11,10 +11,9 @@ import json
 
 
 app = Flask(__name__)  #inicializa
-@app.route("/",methods=['GET']) 
+@app.route("/") 
 def default():
     return "<h1>soy la ruta por defecto</h1>.<p>Añadir get_json?id= para obtener json</p>"
-
 
 @app.route("/get_json", methods = ['GET'])
 def get_json():

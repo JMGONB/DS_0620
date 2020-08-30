@@ -5,10 +5,8 @@ import pandas as pd
 from flask import Flask,render_template,redirect,request,jsonify
 
 
-
 # ----------------------
 # $$$$$$$ SERVER $$$$$$$$
-
 app = Flask(__name__)  #Inicializa el servidor
 
 def main():
@@ -17,12 +15,16 @@ def main():
     print(os.path.dirname(__file__))
     
     # RUTA HASTA EL FICHERO JSON
+
     settings_file = os.path.dirname(__file__) + "\\..\\..\\src\\api\\settings.json"
+
     # ABRIR FICHERO EN MODO LECTURA Y CARGAR EN VARIABLE JSON READED
+
     with open(settings_file, "r") as json_file_readed:
         json_readed = json.load(json_file_readed)
     
     # CARGA DE VARIABLES SERVER RUNNING Y SI ES TRUE CARGUE RESTO DE VARIABLES.
+    
     SERVER_RUNNING = json_readed["server_running"]
     
     if SERVER_RUNNING:
@@ -36,6 +38,6 @@ def main():
             
 if __name__ == "__main__":
     main()
-
+    
 
 

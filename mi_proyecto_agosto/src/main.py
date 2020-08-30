@@ -13,7 +13,8 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import urllib
-from visualization_tb import vacunaciones_cam
+import visualization_tb as vsn 
+
 
 
 
