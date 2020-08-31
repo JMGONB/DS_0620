@@ -11,15 +11,22 @@ def vacunaciones_cam(DataFrame,años):
     valores=DataFrame.columns[3::]
     for x in valores:
         print("\n",x,"\n")
-        vacunados=DataFrame(values=x)
-        vacunados.plot(kind='bar',width=0.8,colors=años.values())
-        plt.title(x)
+        vacunaciones=DataFrame(values=x)
+        vacunaciones.plot(figsize=(8,6),kind='bar',width=0.8, color=años)
+        plt.xlabel("Años comparativa / Incremento")
+        plt.grid(linestyle ='dashed')
+        plt.ylabel("NUMERO DE VACUNACIONES ( x mill)")
+        plt.title("CAM  VACUNACIONES 2018 VS 2019")
+        plt.legend(loc='left center', bbox_to_anchor=(-0.1, 1.),fontsize=10)
         plt.show()
     for x in valores:
-        vacunados=DataFrame(values=x)
-        vacunados.plot()
-        vacunados.plot(kind='bar',width=0.8,colors=años.values())
-        plt.title(x)
+        vacunaciones=DataFrame(values=x)
+        vacunaciones.plot(figsize=(8,6),kind='bar',width=0.8, color=años)
+        plt.xlabel("Años comparativa / Incremento")
+        plt.grid(linestyle ='dashed')
+        plt.ylabel("NUMERO DE VACUNACIONES ( x mill)")
+        plt.title("CAM  VACUNACIONES 2018 VS 2019")
+        plt.legend(loc='left center', bbox_to_anchor=(-0.1, 1.),fontsize=10)
         plt.savefig("../resources/plots/"+x+".png")
         plt.close()
 
@@ -28,18 +35,25 @@ def vacunaciones_cam(DataFrame,años):
 
 def porcentajes(DataFrame,colores_edad):
     valores=DataFrame.columns
+    colores_edad = ["#1f77b4","#2ca02c","#8c564b"]
     desfase=(0.0,0.0,0.0)
     edades=("De 0 a 59 años","De 60 a 64 años","Mayores de 65")
     for x in valores:
         print("\n",x,"\n")
         porcentaje=DataFrame(values=x)
+        plt.figure(figsize=(8,6))
         plt.pie(porcentaje,labels=edades,colors=colores_edad.values(),autopct="%1.1f%%",shadow=True,startangle=90,explode=desfase)
-        plt.title(x)
+        plt.legend(loc='left center', bbox_to_anchor=(-0.1, 1.),fontsize=12)
+        plt.axis("equal")
+        plt.title("CAM  % VACUNACIONES 2019 POR EDADES")
         plt.show()
     for x in valores:
         porcentaje=DataFrame(values=x)
+        plt.figure(figsize=(8,6))
         plt.pie(porcentaje,labels=edades,colors=colores_edad.values(),autopct="%1.1f%%",shadow=True,startangle=90,explode=desfase)
-        plt.title(x)
+        plt.legend(loc='left center', bbox_to_anchor=(-0.1, 1.),fontsize=12)
+        plt.axis("equal")
+        plt.title("CAM  % VACUNACIONES 2019 POR EDADES")
         plt.savefig("../resources/plots/"+x+".png")
         plt.close()
 
@@ -50,13 +64,23 @@ def vacunados_59_cam(DataFrame):
     for x in valores:
         print("\n",x,"\n")
         de0_59=DataFrame(values=x)
-        de0_59.plot()
-        plt.title(x)
+        de0_59.plot(figsize=(8,4),label="vacunados de 0 a 59años")
+        plt.xticks(rotation=45)
+        plt.legend()
+        plt.xlabel("Target edad")
+        plt.ylabel("Personas vacunadas")
+        plt.title("CAM  Vacunados 2019 de 0 a 59 años")
+        plt.grid(linestyle ='dashed')
         plt.show()
     for x in valores:
         de0_59=DataFrame(values=x)
-        de0_59.plot()
-        plt.title(x)
+        de0_59.plot(figsize=(8,4),label="vacunados de 0 a 59años")
+        plt.xticks(rotation=45)
+        plt.legend()
+        plt.xlabel("Target edad")
+        plt.ylabel("Personas vacunadas")
+        plt.title("CAM  Vacunados 2019 de 0 a 59 años")
+        plt.grid(linestyle ='dashed')
         plt.savefig("../resources/plots/"+x+".png")
         plt.close()
         
@@ -68,13 +92,17 @@ def estadistica_59_cam(DataFrame):
     for x in valores:
         print("\n",x,"\n")
         estadistica=DataFrame(values=x)
-        estadistica.plot(kind='barh')
-        plt.title(x)
+        estadistica.plot(figsize=(10,5),kind='barh')
+        plt.title("Estadística vacunaciones 2019 de 0 a 59 años")
+        plt.grid(linestyle ='dashed')
+        plt.xlabel("Número de vacunaciones (Incluye 12 subrangos de edad)")
         plt.show()
     for x in valores:
         estadistica=DataFrame(values=x)
-        estadistica.plot(kind='barh')
-        plt.title(x)
+        estadistica.plot(figsize=(10,5),kind='barh')
+        plt.title("Estadística vacunaciones 2019 de 0 a 59 años")
+        plt.grid(linestyle ='dashed')
+        plt.xlabel("Número de vacunaciones (Incluye 12 subrangos de edad)")
         plt.savefig("../resources/plots/"+x+".png")
         plt.close()
 
@@ -218,3 +246,4 @@ def coste_ref(DataFrame,colores):
         plt.title(x)
         plt.savefig("../resources/plots/"+x+".png")
         plt.close()
+
