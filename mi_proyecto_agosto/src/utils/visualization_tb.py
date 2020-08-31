@@ -5,6 +5,8 @@ import seaborn as sns
 
 # Grafica de la comparativa de vacunaciones en la comunidad de Madrid del 2018 vs 2019
 
+
+
 def vacunaciones_cam(DataFrame,años):
     valores=DataFrame.columns[3::]
     for x in valores:

@@ -29,3 +29,9 @@ def get_json():
         return field
     else:
         return "Error al introducir la clave. Prueba nuevamente"
+
+
+
+
+def return_error():
+    return "Error al introducir la clave. Prueba nuevamente"
